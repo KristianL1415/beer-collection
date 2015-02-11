@@ -1,5 +1,5 @@
 //
-//  BCDataService.h
+//  BCDataAdapter.h
 //  Beer-Collection
 //
 //  Created by Kristian Lien on 2/10/15.
@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AFNetworking.h"
+@interface BCDataAdapter : NSObject
 
-@interface BCDataService : NSObject
-
-+ (void)loadBeersWithBlock:(void (^) (NSArray *dataFields, NSError *error)) block;
++ (NSArray *)convertDataToBeers:(NSArray *)data;
 
 @end

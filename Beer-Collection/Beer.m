@@ -10,4 +10,19 @@
 
 @implementation Beer
 
+- (instancetype) initWithName:(NSString *)name description:(NSString *)description abv:(double)abv brewery:(NSString *)brewery
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.name = name;
+        self.flavorDescription = description;
+        self.abv = abv;
+        self.breweryName = brewery;
+    }
+    
+    return self;
+}
+
 @end

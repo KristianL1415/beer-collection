@@ -10,4 +10,11 @@
 
 @interface Beer : NSObject
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *flavorDescription;
+@property (nonatomic, assign) double abv;
+@property (nonatomic, strong) NSString *breweryName;
+
+- (instancetype) initWithName:(NSString *)name description:(NSString *)description abv:(double)abv brewery:(NSString *)brewery;
+
 @end

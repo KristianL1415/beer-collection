@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import "Beer.h"
+#import "BeerCell.h"
+#import "BCDataService.h"
 #import "StringConstants.h"
 
 @interface ViewController ()
@@ -24,9 +27,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kBeerCell forIndexPath:indexPath];
+    BeerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kBeerCell forIndexPath:indexPath];
     
-    [cell setBackgroundColor:[UIColor whiteColor]];
+    Beer *beer = [self.beers objectAtIndex:indexPath.row];
+    [cell.nameLabel setText:[beer name]];
+    [cell.abvLabel setText:[NSString stringWithFormat:@"abv: %.2f",[beer abv]]];
     
     return cell;
 }
@@ -68,9 +73,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kBeerCell];
-    self.beers = [[NSArray alloc] initWithObjects:@"", @"", @"", @"", @"", @"", nil];
+
+    [BCDataService loadBeersWithBlock:^(NSArray *dataFields, NSError *error) {
+        if (error != nil)
+        {
+            NSLog(@"Error loading beers: %@", error.localizedDescription);
+        }
+        else
+        {
+            self.beers = dataFields;
+            [self.collectionView reloadData];
+        }
+    }];
 }
 
 @end
