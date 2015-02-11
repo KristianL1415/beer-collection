@@ -20,6 +20,7 @@
 		9935857C1A8ABA4C007D9E0E /* NetworkConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9935857B1A8ABA4C007D9E0E /* NetworkConstants.m */; };
 		9935857F1A8ABB3A007D9E0E /* BCDataAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9935857E1A8ABB3A007D9E0E /* BCDataAdapter.m */; };
 		993585821A8ACF33007D9E0E /* BeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 993585811A8ACF33007D9E0E /* BeerCell.m */; };
+		993585851A8BBAAA007D9E0E /* BeerDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 993585841A8BBAAA007D9E0E /* BeerDetailController.m */; };
 		9D20419C1EE779F514C4CB0B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3641530F47C0E5C3AEE8D348 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		9935857E1A8ABB3A007D9E0E /* BCDataAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCDataAdapter.m; sourceTree = "<group>"; };
 		993585801A8ACF33007D9E0E /* BeerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeerCell.h; sourceTree = "<group>"; };
 		993585811A8ACF33007D9E0E /* BeerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerCell.m; sourceTree = "<group>"; };
+		993585831A8BBAAA007D9E0E /* BeerDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeerDetailController.h; sourceTree = "<group>"; };
+		993585841A8BBAAA007D9E0E /* BeerDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeerDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 			children = (
 				991BBFA11A8A952200742AFD /* ViewController.h */,
 				991BBFA21A8A952200742AFD /* ViewController.m */,
+				993585831A8BBAAA007D9E0E /* BeerDetailController.h */,
+				993585841A8BBAAA007D9E0E /* BeerDetailController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				991BBFA01A8A952200742AFD /* AppDelegate.m in Sources */,
 				9935857C1A8ABA4C007D9E0E /* NetworkConstants.m in Sources */,
 				993585791A8AB68C007D9E0E /* BCDataService.m in Sources */,
+				993585851A8BBAAA007D9E0E /* BeerDetailController.m in Sources */,
 				991BBF9D1A8A952200742AFD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

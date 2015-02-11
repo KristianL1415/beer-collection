@@ -11,5 +11,6 @@
 @implementation StringConstants
 
 NSString *const kBeerCell = @"BeerCell";
+NSString *const kBeerSegue = @"BeerSegue";
 
 @end

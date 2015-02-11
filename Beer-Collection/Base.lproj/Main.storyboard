@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0NH-kf-Ebw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Beers-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jaI-ut-WbG">
-                                <rect key="frame" x="0.0" y="28" width="320" height="540"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="FbG-2c-ZoK">
                                     <size key="itemSize" width="100" height="100"/>
@@ -70,11 +70,98 @@
                             <constraint firstItem="jaI-ut-WbG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="oXJ-ig-BcL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Beers" id="UOR-fG-aQ9"/>
                     <connections>
                         <outlet property="collectionView" destination="jaI-ut-WbG" id="w5P-ey-dBb"/>
+                        <segue destination="tY2-z5-7vv" kind="push" identifier="BeerSegue" id="8sf-h5-msK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="440"/>
+        </scene>
+        <!--Beer Name-->
+        <scene sceneID="BAT-aF-LZX">
+            <objects>
+                <viewController id="tY2-z5-7vv" customClass="BeerDetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mPv-1q-R0b"/>
+                        <viewControllerLayoutGuide type="bottom" id="6jF-Kc-qhU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cOv-ml-dE1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abv" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDW-95-ml7">
+                                <rect key="frame" x="16" y="131" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="U20-29-U0k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAz-Tf-ZB3">
+                                <rect key="frame" x="16" y="179" width="288" height="369"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Menlo-Italic" family="Menlo" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tY2-z5-7vv" id="QcT-Tm-xJo"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brewery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeZ-SL-6El">
+                                <rect key="frame" x="16" y="83" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="e1H-ey-IDN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94068610669999997" green="0.84164416789999996" blue="0.47068333629999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PDW-95-ml7" firstAttribute="leading" secondItem="cOv-ml-dE1" secondAttribute="leadingMargin" id="4Dp-BW-PkT"/>
+                            <constraint firstItem="hAz-Tf-ZB3" firstAttribute="leading" secondItem="cOv-ml-dE1" secondAttribute="leadingMargin" id="E4d-aR-ZEe"/>
+                            <constraint firstItem="BeZ-SL-6El" firstAttribute="trailing" secondItem="cOv-ml-dE1" secondAttribute="trailingMargin" id="Pc3-Dz-OoL"/>
+                            <constraint firstItem="hAz-Tf-ZB3" firstAttribute="top" secondItem="PDW-95-ml7" secondAttribute="bottom" constant="8" id="R6j-uI-c12"/>
+                            <constraint firstItem="hAz-Tf-ZB3" firstAttribute="trailing" secondItem="cOv-ml-dE1" secondAttribute="trailingMargin" id="SDl-ys-yhZ"/>
+                            <constraint firstItem="PDW-95-ml7" firstAttribute="trailing" secondItem="cOv-ml-dE1" secondAttribute="trailingMargin" id="bxV-lb-KY4"/>
+                            <constraint firstItem="BeZ-SL-6El" firstAttribute="leading" secondItem="cOv-ml-dE1" secondAttribute="leadingMargin" id="cgA-bC-4PK"/>
+                            <constraint firstItem="PDW-95-ml7" firstAttribute="top" secondItem="BeZ-SL-6El" secondAttribute="bottom" constant="8" id="cwP-DM-WEs"/>
+                            <constraint firstItem="6jF-Kc-qhU" firstAttribute="top" secondItem="hAz-Tf-ZB3" secondAttribute="bottom" constant="20" id="gry-52-zxa"/>
+                            <constraint firstItem="BeZ-SL-6El" firstAttribute="top" secondItem="mPv-1q-R0b" secondAttribute="bottom" constant="19" id="pYL-X1-nze"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Beer Name" id="jnE-sU-Kdw"/>
+                    <connections>
+                        <outlet property="abv" destination="PDW-95-ml7" id="QZa-T9-Hog"/>
+                        <outlet property="brewery" destination="BeZ-SL-6El" id="QPc-ky-k2D"/>
+                        <outlet property="flavorDescription" destination="hAz-Tf-ZB3" id="i2m-EF-PlD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9a-ZX-X42" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="440"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tnU-Z1-YPa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0NH-kf-Ebw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K1z-iy-g3R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="HzE-qK-vVD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Q2-PH-qmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="301" y="440"/>
         </scene>

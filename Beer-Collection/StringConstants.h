@@ -11,5 +11,6 @@
 @interface StringConstants : NSObject
 
 extern NSString *const kBeerCell;
+extern NSString *const kBeerSegue;
 
 @end

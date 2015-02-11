@@ -12,10 +12,13 @@
 #import "BeerCell.h"
 #import "BCDataService.h"
 #import "StringConstants.h"
+#import "BeerDetailController.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) NSArray *beers;
+
+@property (nonatomic, strong) Beer *currentBeer;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
@@ -43,7 +46,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.currentBeer = [self.beers objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:kBeerSegue sender:nil];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -65,7 +69,7 @@
 // Returns spacing between cells, headers and footers
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0);
+    return UIEdgeInsetsMake(-54.0, 20.0, 20.0, 20.0);
 }
 
 #pragma mark - Override Methods
@@ -85,6 +89,16 @@
             [self.collectionView reloadData];
         }
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kBeerSegue])
+    {
+        BeerDetailController *destination = (BeerDetailController *) segue.destinationViewController;
+        
+        [destination setBeer:self.currentBeer];
+    }
 }
 
 @end
