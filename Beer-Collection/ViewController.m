@@ -60,8 +60,8 @@
 // Returns the size for each collection view item
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: Set this value
-    CGSize cellSpacing = CGSizeMake(100.0, 100.0);
+    CGFloat sideLength = (self.view.frame.size.width - 40.0) / 3.0;
+    CGSize cellSpacing = CGSizeMake(sideLength, sideLength);
     
     return cellSpacing;
 }
@@ -69,7 +69,7 @@
 // Returns spacing between cells, headers and footers
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(-54.0, 20.0, 20.0, 20.0);
+    return UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0);
 }
 
 #pragma mark - Override Methods
